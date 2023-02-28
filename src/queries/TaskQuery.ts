@@ -1,0 +1,6 @@
+export const getAllTasks = 'SELECT * FROM tasks'
+export const getTask = 'SELECT * FROM tasks WHERE _id = $1'
+export const createTask = 'INSERT INTO tasks (title, "isDone") VALUES($1, $2) RETURNING *'
+export const updateTaskTitle = 'UPDATE tasks SET title = $1 WHERE _id = $2 RETURNING *'
+export const updateTaskIsDone = 'UPDATE tasks SET "isDone" = $1 WHERE _id = $2 RETURNING *'
+export const deleteTask = 'DELETE FROM tasks WHERE _id = $1'
