@@ -35,13 +35,11 @@ export const taskController = {
     },
     createTask: async(req: Request, res: Response, next: NextFunction) => {
         const {title, isDone} = req.body;
-        console.log(req.body);
-        console.log(createTask);
         try {
             const results = await pool.query(createTask, [title, isDone]);
             return res.status(200).json({
-                message: 'successfully',
-                task: results.rows
+                message: 'successful',
+                task: results.rows[0]
             })
         } catch (error) {
             return res.status(500).json({
